@@ -1,7 +1,8 @@
 const mongoose= require('mongoose')
+// const dburl=process.env.MONGO_DB
 const connection=async ()=>{
     try{
-        const con =await mongoose.connect('mongodb+srv://rahulmali08277:9mTgtk7M7ZRvQsRe@cluster0.lwo23.mongodb.net/')
+        const con =await mongoose.connect(process.env.MONGO_DB)
         console.log("Database connected successfully")
     }catch(err){
         console.log(err,"database is not connected")

@@ -5,14 +5,16 @@ const { route2 } = require('./Route/Admin_Route.js');
 const { route3 } = require('./Route/Role_route.js');
 const { roleassignroute } = require('./Route/RoleAssign.js');
 const cors=require('cors')
+require('dotenv').config();
+
 
 const app=express();
 app.use(express.json())
 app.use(cors())
-const port=3700;
+const port=process.env.PORT || 3800
+
 
 connection();
-
 app.use('/',cat)
 app.use('/',route2)
 app.use('/',route3)
